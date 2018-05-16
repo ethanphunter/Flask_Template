@@ -1,0 +1,108 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Flask_Template",
+		"_postman_id": "98c3bfd8-8b45-55d7-6093-8f21dc50a672",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Ping Route",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": "tests[\"Body matches string\"] = responseBody.has(\"pong\");"
+					}
+				}
+			],
+			"request": {
+				"url": "localhost:5000/default/ping",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:5000/api/add_book",
+			"request": {
+				"url": "localhost:5000/api/add_book",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\": \"The Best Book, The Sequel\",\n\t\"authorId\": 1,\n\t\"bookId\": 1235\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:5000/api/all_books",
+			"request": {
+				"url": "localhost:5000/api/all_books",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:5000/api/delete_book",
+			"request": {
+				"url": "localhost:5000/api/delete_book",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"bookId\": 1235\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:5000/api/search_by_title",
+			"request": {
+				"url": "localhost:5000/api/search_by_title",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\": \"The Best Book\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
