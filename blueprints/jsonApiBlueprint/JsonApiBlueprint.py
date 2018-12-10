@@ -1,7 +1,7 @@
 from .library.InMemoryLibrary import InMemoryLibrary
 from .library.JsonEncoder import LibraryJsonEncoder
 from .library.Models import Book
-from .Responses import *
+from ..Responses import *
 from flask import Blueprint, request, jsonify
 
 jsonApiBlueprint = Blueprint("Json_Api_Blueprint", __name__)
