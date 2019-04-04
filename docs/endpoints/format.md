@@ -7,3 +7,6 @@
 {Parameters}
 
 {Description of what the endpoint does}
+
+Responses
+{ex. - 204 NoContent - Success}
