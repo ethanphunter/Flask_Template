@@ -24,7 +24,7 @@ Responses
  - 204 NoContent - Book successfully added
  - 400 BadRequest - Book was not added OR the body of the request was invalid
 
-### POST /delete_book
+### DELETE /delete_book
 jsonBody:
 ```
 {
