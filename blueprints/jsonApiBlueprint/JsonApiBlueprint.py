@@ -30,7 +30,7 @@ def add():
     except:
         return BadRequest()
 
-@jsonApiBlueprint.route("/delete_book", methods = ["POST"])
+@jsonApiBlueprint.route("/delete_book", methods = ["DELETE"])
 def delete():
     try:
         jsonData = request.get_json()
