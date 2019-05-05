@@ -1,4 +1,4 @@
-## Flask Template
+## Flask Template [![Build Status](https://travis-ci.com/ethanphunter/Flask_Template.svg?branch=master)](https://travis-ci.com/ethanphunter/Flask_Template)
 
 This is a template for [Flask](https://www.palletsprojects.com/p/flask/) applications!
 
