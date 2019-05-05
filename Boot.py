@@ -17,5 +17,5 @@ app.config.from_json(CONFIGPATH)
 app.register_blueprint(defaultBlueprint, url_prefix = "/default")
 app.register_blueprint(jsonApiBlueprint, url_prefix = "/api")
 
-if __name__ == '__main__':
+if (__name__ == '__main__'):
     app.run()
