@@ -4,16 +4,16 @@
     Description: The main executable for Flask_Template
 """
 
-CONFIGPATH = "./config/DefaultConfig.json"
-
 from flask import Flask
+from config.Config import Config
 from blueprints.defaultBlueprint.DefaultBlueprint import defaultBlueprint
 from blueprints.jsonApiBlueprint.JsonApiBlueprint import jsonApiBlueprint
 from blueprints.htmlBlueprint.HtmlBlueprint import htmlBlueprint
 
+conf = Config()
 app = Flask("Flask_Template")
 
-app.config.from_json(CONFIGPATH)
+app.config.from_json(conf.CONFIGPATH)
 
 app.register_blueprint(htmlBlueprint, url_prefix = "/")
 app.register_blueprint(defaultBlueprint, url_prefix = "/default")
