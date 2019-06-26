@@ -14,10 +14,6 @@ class JsonApiBlueprint(object):
         @jsonApiBlueprint.route("/all_books")
         def allBooks():
             books = self.library.getAllBooks()
-            print(books)
-            for b in books:
-                print(b)
-            # books = []
             return jsonify( books = books)
 
         @jsonApiBlueprint.route("/add_book", methods = ["POST"])
