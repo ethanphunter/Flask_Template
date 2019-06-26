@@ -68,7 +68,7 @@
 			"name": "localhost:5000/api/delete_book",
 			"request": {
 				"url": "localhost:5000/api/delete_book",
-				"method": "POST",
+				"method": "DELETE",
 				"header": [
 					{
 						"key": "Content-Type",
