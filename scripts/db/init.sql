@@ -5,6 +5,8 @@
 -- UPDATED: Null
 begin;
 
+CREATE USER username WITH PASSWORD 'password';
+
 CREATE TABLE Books(
   id          int PRIMARY KEY NOT NULL,
   title       TEXT            NOT NULL,
