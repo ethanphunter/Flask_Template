@@ -1,5 +1,6 @@
-import pytest
 from blueprints.jsonApiBlueprint.library.Models import Book
+
+import pytest
 
 def book():
     return Book(

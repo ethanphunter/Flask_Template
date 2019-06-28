@@ -4,11 +4,12 @@
     Description: The main executable for Flask_Template
 """
 
-from flask import Flask
-from config.Config import Config
 from blueprints.defaultBlueprint.DefaultBlueprint import defaultBlueprint
-from blueprints.jsonApiBlueprint.JsonApiBlueprint import JsonApiBlueprint
 from blueprints.htmlBlueprint.HtmlBlueprint import htmlBlueprint
+from blueprints.jsonApiBlueprint.JsonApiBlueprint import JsonApiBlueprint
+from config.Config import Config
+
+from flask import Flask
 
 conf = Config()
 app = Flask("Flask_Template")

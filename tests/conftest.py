@@ -1,7 +1,8 @@
-import pytest
-import Boot
-from config.Config import Config
 from blueprints.jsonApiBlueprint.library.PostgresLibrary import PostgresLibrary
+from config.Config import Config
+import Boot
+
+import pytest
 
 @pytest.fixture( scope = "module" )
 def client():

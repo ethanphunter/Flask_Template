@@ -1,8 +1,9 @@
+from ..Responses import *
 from .library.InMemoryLibrary import InMemoryLibrary
 from .library.JsonEncoder import LibraryJsonEncoder
-from .library.PostgresLibrary import PostgresLibrary
 from .library.Models import Book
-from ..Responses import *
+from .library.PostgresLibrary import PostgresLibrary
+
 from flask import Blueprint, request, jsonify
 
 class JsonApiBlueprint(object):

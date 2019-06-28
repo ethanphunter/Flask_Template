@@ -1,5 +1,6 @@
-import pytest
 from postgres.Postgres import Postgres
+
+import pytest
 
 def test_urlParse():
     p = Postgres(url = "postgres://username:password@host:1234/database", test = True)
