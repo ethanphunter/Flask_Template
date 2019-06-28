@@ -1,10 +1,16 @@
 language: python
 python:
-- '3.6'
+  - '3.6'
 install:
-- pip install -r requirements.txt
+  - pip install -r requirements.txt
 script:
-- pytest
+  - pytest
+services:
+  - postgresql
+before_script:
+  - ./scripts/db/init
+  - psql -f ./scripts/db/init.sql
+  - psql -f ./scripts/db/test-data.sql
 deploy:
   provider: heroku
   app: flask-template-dev
