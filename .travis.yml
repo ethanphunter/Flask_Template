@@ -11,8 +11,6 @@ services:
   - postgresql
 before_script:
   - ./scripts/db/init
-  - psql -f ./scripts/db/init.sql
-  - psql -f ./scripts/db/test-data.sql
 deploy:
   provider: heroku
   app: flask-template-dev
