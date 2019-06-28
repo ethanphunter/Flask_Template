@@ -13,7 +13,7 @@ class PostgresLibrary(Postgres):
         self.db_url = url
 
     def _bookExists(self, bookId) -> Attempt:
-        maybeBookCount = self.getQuery("""select count(*) from Books where id = %s""", (bookId,))
+        maybeBookCount = self.getQuery("""select count(*) from books where id = %s""", (bookId,))
         if ( not maybeBookCount.isFailure() ):
             bookCount = maybeBookCount.get()
             if (bookCount[0][0] == 1):
@@ -30,11 +30,11 @@ class PostgresLibrary(Postgres):
         return accum
 
     def addBook(self, book: Book) -> bool:
-        maybeBookCount = self.getQuery("""select count(*) from Books where id = %s""", (book.bookId,))
+        maybeBookCount = self.getQuery("""select count(*) from books where id = %s""", (book.bookId,))
         if (not maybeBookCount.isFailure()):
             bookCount = maybeBookCount.get()
             if (bookCount[0][0] == 0):
-                w = self.writeQuery("""insert into Books values (%s, %s, %s)""", (book.bookId, book.title, book.authorId))
+                w = self.writeQuery("""insert into books values (%s, %s, %s)""", (book.bookId, book.title, book.authorId))
                 return not w.isFailure()
             else:
                 return False
@@ -47,13 +47,13 @@ class PostgresLibrary(Postgres):
     def deleteBook(self, bookId) -> bool:
         be = self._bookExists(bookId)
         if ( not be.isFailure() and be.get() == True ):
-            deleteBook = self.writeQuery("""delete from Books where id = %s""", (bookId, ))
+            deleteBook = self.writeQuery("""delete from books where id = %s""", (bookId, ))
             return not deleteBook.isFailure()
         else:
             return False
 
     def getAllBooks(self) -> List[Book]:
-        maybeBooks = self.getQuery("""select * from Books""", None)
+        maybeBooks = self.getQuery("""select * from books""", None)
         if ( not maybeBooks.isFailure() ):
             return self._tupleListToBookList(maybeBooks.get())
         else:
