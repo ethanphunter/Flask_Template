@@ -5,10 +5,17 @@ install:
   - pip install -r requirements.txt
 script:
   - pytest
-addons:
-  postgresql: "10.5"
 services:
   - postgresql
+addons:
+  postgresql: "10.5"
+  apt:
+    packages:
+    - postgresql-10
+    - postgresql-client-10
+env:
+  global:
+  - PGPORT=5433
 before_script:
   - ./scripts/db/init
   - psql -f ./scripts/db/init.sql
