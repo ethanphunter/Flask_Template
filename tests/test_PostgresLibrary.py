@@ -1,5 +1,4 @@
 import pytest
-from blueprints.jsonApiBlueprint.library.PostgresLibrary import PostgresLibrary
 from blueprints.jsonApiBlueprint.library.Models import Book
 
 def book():
@@ -8,15 +7,18 @@ def book():
 	    authorId = 1,
 	    bookId = 1235)
 
-def test_addBook(config):
-    pl = PostgresLibrary(config.db_url)
-    assert pl.addBook(book())
+def test_addBook(postgresLibrary):
+    assert postgresLibrary.addBook(book())
+    assert not postgresLibrary.addBook(book())
 
-def test_getAllBooks(config):
-    pl = PostgresLibrary(config.db_url)
-    books = pl.getAllBooks()
+def test_getAllBooks(postgresLibrary):
+    books = postgresLibrary.getAllBooks()
     assert book() in books
 
-def test_deleteBook(config):
-    pl = PostgresLibrary(config.db_url)
-    assert pl.deleteBook(book().bookId)
+def test_deleteBook(postgresLibrary):
+    assert postgresLibrary.deleteBook(book().bookId)
+    assert not postgresLibrary.deleteBook(book().bookId)
+
+def test_getAllBooksRemoved(postgresLibrary):
+    books = postgresLibrary.getAllBooks()
+    assert not book() in books
