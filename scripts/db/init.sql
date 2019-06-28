@@ -2,7 +2,7 @@
 -- DATABASE: flask-template-db
 -- AUTHOR: Ethan Hunter
 -- CREATED: 2019-05-11
--- UPDATED: Null
+-- UPDATED: 2019-06-27
 begin;
 
 CREATE USER username WITH PASSWORD 'password';
