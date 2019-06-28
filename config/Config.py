@@ -7,6 +7,7 @@ class Config(object):
 
     def __init__(self):
         super(Config, self).__init__()
+        self.template_folder = "templates"
         try:
             environment = os.environ['env']
         except Exception as e:

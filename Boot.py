@@ -5,7 +5,7 @@
 """
 
 from blueprints.defaultBlueprint.DefaultBlueprint import defaultBlueprint
-from blueprints.htmlBlueprint.HtmlBlueprint import htmlBlueprint
+from blueprints.htmlBlueprint.HtmlBlueprint import HtmlBlueprint
 from blueprints.jsonApiBlueprint.JsonApiBlueprint import JsonApiBlueprint
 from config.Config import Config
 
@@ -17,6 +17,7 @@ app = Flask("Flask_Template")
 app.config.from_json(conf.CONFIGPATH)
 
 jsonApiBlueprint = JsonApiBlueprint(conf.db_url).jsonApiBlueprint
+htmlBlueprint = HtmlBlueprint(conf.template_folder).htmlBlueprint
 
 app.register_blueprint(htmlBlueprint, url_prefix = "/")
 app.register_blueprint(defaultBlueprint, url_prefix = "/default")
