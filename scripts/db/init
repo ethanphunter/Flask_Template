@@ -1,1 +1,1 @@
-createdb flask-template-db 
+createdb -h 0.0.0.0 -p 5432 flask-template-db 

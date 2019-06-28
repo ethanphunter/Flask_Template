@@ -15,7 +15,7 @@ addons:
     - postgresql-client-10
 env:
   global:
-  - PGPORT=5433
+  - PGPORT=5432
 before_script:
   - ./scripts/db/init
   - psql -f ./scripts/db/init.sql
