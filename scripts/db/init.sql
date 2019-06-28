@@ -7,7 +7,7 @@ begin;
 
 CREATE USER username WITH PASSWORD 'password';
 
-CREATE TABLE books(
+CREATE TABLE Books(
   id          int PRIMARY KEY NOT NULL,
   title       TEXT            NOT NULL,
   authorId    int             NOT NULL);
