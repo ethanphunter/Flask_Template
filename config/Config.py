@@ -14,7 +14,7 @@ class Config(object):
             environment = 'dev'
 
         try:
-            db_url = os.environ['db_url']
+            self.db_url = os.environ['DATABASE_URL']
         except Exception as e:
             self.db_url = "postgres://username:password@localhost:5432/flask-template-db"
 
