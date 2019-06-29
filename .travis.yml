@@ -1,3 +1,6 @@
+branches:
+  only:
+  - master
 language: python
 python:
   - '3.6'
@@ -11,6 +14,7 @@ services:
   - postgresql
 before_script:
   - ./scripts/db/init
+  - psql flask-template-db -f ./scripts/db/init-user.sql
 deploy:
   provider: heroku
   app: flask-template-dev

@@ -1,5 +1,5 @@
-import pytest
 from flask import json
+import pytest
 
 def test_index(client):
     """Test the /index endpoint"""

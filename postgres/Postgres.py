@@ -1,7 +1,8 @@
-from helperModels.Success import Success
 from helperModels.Failure import Failure
-import psycopg2
+from helperModels.Success import Success
+
 from abc import ABC
+import psycopg2
 
 class Postgres(ABC):
     """docstring for Postgres."""
