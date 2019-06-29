@@ -17,7 +17,7 @@ before_script:
   - psql flask-template-db -f ./scripts/db/init-user.sql
 deploy:
   on:
-    tags: true
+    tags: false
   provider: heroku
   app: flask-template-dev
   api_key:
