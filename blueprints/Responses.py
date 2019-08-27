@@ -24,3 +24,11 @@ class NotImplemented(Response):
             response = None,
             status = HTTPStatus.NOT_IMPLEMENTED,
             mimetype = "application/json")
+
+class BadGateway(Response):
+    """docstring for NotImplemented."""
+    def __init__(self):
+        super(BadGateway, self).__init__(
+            response = None,
+            status = HTTPStatus.BAD_GATEWAY,
+            mimetype = "application/json")
