@@ -1,3 +1,4 @@
+from helperModels.Attempt import Attempt
 from helperModels.Failure import Failure
 from helperModels.Success import Success
 
@@ -11,14 +12,22 @@ class Postgres(ABC):
         super(Postgres, self).__init__()
         self._parseUrl(url)
         if (not test):
-            self.connection = psycopg2.connect(
-                database = self.database,
-                user = self.username,
-                password = self.password,
-                host = self.host,
-                port = self.port)
-            self.connection.autocommit = True
-            self.cursor = self.connection.cursor()
+            try:
+                self.connection = psycopg2.connect(
+                    database = self.database,
+                    user = self.username,
+                    password = self.password,
+                    host = self.host,
+                    port = self.port)
+                self.connection.autocommit = True
+                self.cursor = self.connection.cursor()
+                self.ready = Success("Connected to the db")
+            except Exception as e:
+                print("Cannot connect to the database: " + str(e))
+                self.ready = Failure("Cannot connect to the database")
+
+    def ready(self) -> Attempt:
+        return self.ready
 
     def _parseUrl(self, url: str) -> None:
         y = url.split("@")
