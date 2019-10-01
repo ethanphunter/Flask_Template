@@ -1,6 +1,7 @@
 branches:
   only:
   - master
+  - /\d+\.\d+\.\d+/
 language: python
 python:
   - '3.6'
@@ -17,7 +18,9 @@ before_script:
   - psql flask-template-db -f ./scripts/db/init-user.sql
 deploy:
   on:
-    tags: false
+    repo: ethanphunter/Flask_Template
+    tags: true
+    all_branches: true
   provider: heroku
   app: flask-template-dev
   api_key:
