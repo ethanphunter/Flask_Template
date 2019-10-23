@@ -14,9 +14,7 @@ Since this project is only an example, there are many different ways to accompli
 Please open a [github issue](https://github.com/ethanphunter/Flask_Template/issues) on the Flask_Template repository. 
 
 ### Security Issues / Concerns
-If the issue is sensitive please contact the project owner(s) at ethanphunter@gmail.com with [Flask_Template SECURITY] as the beginning of the email subject.
-
-If the issue is not sensitive, a github issue will be fine.
+See [Security.md](https://github.com/ethanphunter/Flask_Template/blob/master/SECURITY.md)
 
 ### Contributing to the Codebase
 Please open a pull request so your changes can be reviewed. 
