@@ -1,3 +1,4 @@
 createdb -h 0.0.0.0 -p 5432 flask-template-db
+psql flask-template-db -f ./scripts/db/init-user.sql
 psql flask-template-db -f ./scripts/db/init.sql
 psql flask-template-db -f ./scripts/db/test-data.sql
