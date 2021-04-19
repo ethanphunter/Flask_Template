@@ -1,7 +1,7 @@
 branches:
   only:
-  - master
-  - /\d+\.\d+\.\d+/
+    - master
+    - "/\\d+\\.\\d+\\.\\d+/"
 language: python
 python:
   - '3.6'
@@ -10,11 +10,11 @@ install:
 script:
   - pytest
 addons:
-  postgresql: "9.6"
+  postgresql: '9.6'
 services:
   - postgresql
 before_script:
-  - ./scripts/db/init
+  - "./scripts/db/init"
   - psql flask-template-db -f ./scripts/db/init-user.sql
 deploy:
   on:
@@ -24,4 +24,4 @@ deploy:
   provider: heroku
   app: flask-template-dev
   api_key:
-    secure: HsPqGK6FcEmngSUJjRWlxSWBNRrewzAAwtB+3eUPzZcamfUqQm2im0SshUVrRavAZp8ZwEYoP5chiCpvOqKU5mFZVletLvbBG2hMqG6QcTv93D1gyfycbshx/DkmU1iMDWQRWMek16/3OL002oxYBToYTWP5WO1c0AionOg47R+xi4DItW3OVltIM7NoLEZDRY2TFeVgtSCpe2Gj/k/swK/G9JnqBccYDi0iDOKapjFiRkXdignqGfkFEy/p10MaSBY+2Ouzsl78Dw9/rVHEPwq6JPjCDqi/6VaJjUaxetVl71EURiBKaRun30GZkgMYGZ5fWboW/P/EI52XuC2UC5EsGmOfHGHCjWq2jI5tmbNo1OCNY7xpmo9m7QKWzusrNt1z1Beu9/4nUUKXU0hVJvkS9jdAsOk6FMvVjow0XDCM7KCH3VvYBtA4tu8XtehfabnZDZjTnWTZveviPvpm/eT5xWPr7NkQkWW7ntnq71DOeJ9GejraVf7MQoGo6ZCFC3oko0/x9w2ahIlNYKlyBgl8fxC8GaDwgnQvhGhu/1mUuCFhtuXNDNvBpwCY0rweMn5Y5kdeuIHXHTQRoZzXQqb6h+N2hkI6IIqHNP+d4T0/Ot/e/S/X9V0MGB2UWa6B0H6jmz+sGACsCYdlsHcbzpxbLh9Cw29pHhpUCvOiFLQ=
+    secure: XUdgEyKrgojal/HSj/yoBCAp+TkPN43CgY8XYeH1q3rr5UdwmZCh820RgqulcxFulxKRzhDCw+vdBs6RjG53+nayZrerPxMYqvhJyDCoiL6oa8FT5xvChndLeS3oMUNi1DkjeGluObZwcaVFJKDlncITDAgCHRVC6W/XOq5yBdG/CuHChcOdCJB7CZ6atmcFOKp9VmBg9ev7/JZj/cCQeIifj6u9leGH66LEPdiPa/SA+drcoe8KfCDLwhxwT6zNLy6UzR1NcRUH1pm5/Dvj3ZgafYWjGBFFGrnFfpgDvxKLCU9yf0oQMSlKS/gVCIX3Ys1plogmJ9gXVoxeEgQtFWBotVnEPVjvKUaLPQ44AqaJ4oSEcwfQJjnI8SBJu8wEEfPhAVVtloFDTlLpk5I/Gw4ANZ+MirkfjMmY55YZhkeukuQ8VTO20ht1+BAV+Q+nY4jEXrbR+VCbeKrgBC3WtgYEml8eDAIwAGCpDs0czpv1nZQH836XCyPodAVmJzfp1FQAkOt5U09FZOsPu8Yu5iubSIsj/PPEb0/B/iRfMbWMl+2clME876FnK8kx88niYaKzCjbngS2+BGpJ7cTSjT2xI1LtgnrrqP+RlmfQOgZuUsA67zwVqD2bANgOvTeCXyAflPP97uWSpjHVVxqHZcGIhJJbaGhnui8gNrZup6k=
